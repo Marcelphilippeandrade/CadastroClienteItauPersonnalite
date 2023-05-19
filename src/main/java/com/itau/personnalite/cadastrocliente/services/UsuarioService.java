@@ -37,4 +37,5 @@ public interface UsuarioService {
 	 * @return Optional<Usuario>
 	 */
 	Optional<Usuario> buscarPorId(Long id);
+	
 }

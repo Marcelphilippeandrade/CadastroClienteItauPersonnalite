@@ -58,6 +58,7 @@ public class UsuarioController {
 
 		this.usuarioService.persistirUsuario(usuario);
 
+		response.setData(cadastroUsuarioDto);
 		return ResponseEntity.ok(response);
 	}
 
@@ -100,17 +101,67 @@ public class UsuarioController {
 		return ResponseEntity.ok(response);
 	}
 
-	@PutMapping(value = "/{cpf}")
+	/**
+	 * Atualiza os dados de um usuário
+	 * 
+	 * @param cpf
+	 * @param usuarioDto
+	 * @param result
+	 * @return ResponseEntity<Response<UsuarioDto>>
+	 * @throws NoSuchAlgorithmException
+	 */
+	@PutMapping(value = "/cpf/{cpf}")
 	public ResponseEntity<Response<UsuarioDto>> atualizar(@PathVariable("cpf") String cpf,
-			@Valid @RequestBody UsuarioDto funcionarioDto, BindingResult result) throws NoSuchAlgorithmException {
+			@Valid @RequestBody UsuarioDto usuarioDto, BindingResult result) throws NoSuchAlgorithmException {
 
 		Response<UsuarioDto> response = new Response<>();
+		Optional<Usuario> usuario = this.usuarioService.buscarPorCpf(cpf);
 
-		return null;
+		if (!usuario.isPresent()) {
+			result.addError(new ObjectError("Usuario", "Usuário não encontrado para o CPF: {}" + cpf));
+		}
+
+		if (usuario.isPresent()) {
+			this.atualizarDadosUsuario(usuario.get(), usuarioDto, result);
+		}
+
+		if (result.hasErrors()) {
+			result.getAllErrors().forEach(error -> response.getErros().add(error.getDefaultMessage()));
+			return ResponseEntity.badRequest().body(response);
+		}
+
+		this.usuarioService.persistirUsuario(usuario.get());
+		response.setData(this.converterUsuarioDto(usuario.get()));
+
+		return ResponseEntity.ok(response);
 	}
 
 	/**
-	 * Converte os dados de DTO para usuário
+	 * Recebe dados do usuário para a atualização
+	 * 
+	 * @param usuario
+	 * @param usuarioDto
+	 * @param result
+	 * @throws NoSuchAlgorithmException
+	 */
+	private void atualizarDadosUsuario(Usuario usuario, @Valid UsuarioDto usuarioDto, BindingResult result)
+			throws NoSuchAlgorithmException {
+
+		usuario.setNome(usuarioDto.getNome());
+
+		if (!usuario.getCpf().equals(usuarioDto.getCpf())) {
+			this.usuarioService.buscarPorCpf(usuarioDto.getCpf())
+					.ifPresent(func -> result.addError(new ObjectError("CPF", "CPF já existente.")));
+			usuario.setCpf(usuarioDto.getCpf());
+		}
+
+		usuario.setDataNascimento(new DataUtil().transformarStringEmLocalDate(usuarioDto.getDataNascimento()));
+		usuario.setEmail(usuarioDto.getEmail());
+		usuario.setEndereco(usuarioDto.getEndereco());
+	}
+
+	/**
+	 * Converte os dados de DTO para Usuário
 	 * 
 	 * @param cadastroUsuarioDto
 	 * @param result
@@ -128,6 +179,12 @@ public class UsuarioController {
 		return usuario;
 	}
 
+	/**
+	 * Converte os dados de Usuário para DTO
+	 * 
+	 * @param usuario
+	 * @return UsuarioDto
+	 */
 	private UsuarioDto converterUsuarioDto(Usuario usuario) {
 		UsuarioDto usuarioDto = new UsuarioDto();
 		DataUtil dataNascimento = new DataUtil();
