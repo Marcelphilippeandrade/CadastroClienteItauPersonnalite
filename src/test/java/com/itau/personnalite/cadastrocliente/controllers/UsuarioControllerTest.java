@@ -29,7 +29,7 @@ import com.itau.personnalite.cadastrocliente.utils.DataUtil;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@AutoConfigureMockMvc
+@AutoConfigureMockMvc(secure=false)
 public class UsuarioControllerTest {
 
 	@Autowired
