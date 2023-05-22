@@ -22,15 +22,15 @@ Construir uma API de cadastro de clientes Itaú Personnalité responsável por f
 1. Ter o Docker instalado e com as variáveis de ambiente devidamente configuradas;
 
 # Execução do projeto sem Docker:
-Executar o comando: <b>mvn spring-boot:run</b>
-Para acessar o Swagger contendo todos os Endpoints via interface web: <b>http://localhost:8080/swagger-ui.html</b>
-Para acessar o banco de dados H2 (Banco de dados em memória): http://localhost:8080/h2
+1. Executar o comando: <b>mvn spring-boot:run</b>
+2. Para acessar o Swagger contendo todos os Endpoints via interface web: <b>http://localhost:8080/swagger-ui.html</b>
+3. Para acessar o banco de dados H2 (Banco de dados em memória): http://localhost:8080/h2
 Obs: A senha do banco e a URL de coneção estão no arquivo: <b>application.properties (CadastroClienteItauPersonnalite/src/main/resources)</b>
 
 # Execução do projeto com Docker:
-Entrar dentro do diretório do projeto onde está localizado o arquivo <b>Dockerfile (/CadastroClienteItauPersonnalite)</b>
-Executar o comando: <b>docker build -t <Nome da imagem a ser criada (sugestão: api_itau)></b>
-Executar o comando: <b>docker run -p 8080:8080</b>
+1. Entrar dentro do diretório do projeto onde está localizado o arquivo <b>Dockerfile (/CadastroClienteItauPersonnalite)</b>
+2. Executar o comando: <b>docker build -t <Nome da imagem a ser criada (sugestão: api_itau)></b>
+3. Executar o comando: <b>docker run -p 8080:8080</b>
 Obs: Após a execução dos passos acima a aplicação já estará sendo executada em um conteiner e você já poderá mandar requisições http através de qualquer
 ferramenta de requisições http <b>(Sugestão: Postman)</b>. E também poderá acessar a documentação da Api por meio do Swagger(http://localhost:8080/swagger-ui.html)
 
