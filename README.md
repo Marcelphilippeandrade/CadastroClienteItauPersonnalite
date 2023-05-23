@@ -7,7 +7,7 @@
 API para cadastro de clientes Itaú Personnalité com Java e Spring Boot. Está API foi desenvolvida utilizando a linguagem Java versão 8 e o framework Spring Boot.
 
 # Objetivo:
-Construir uma API de cadastro de clientes Itaú Personnalité responsável por fazer todo o gerenciamento de dados dados clientes do banco Itaú.
+Construir uma API de cadastro de clientes Itaú Personnalité responsável por fazer todo o gerenciamento de dados dos clientes do banco Itaú.
 
 # Tecnologias utilizadas: 
 * Java (Versão 8); 
