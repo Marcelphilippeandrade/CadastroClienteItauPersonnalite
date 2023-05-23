@@ -46,19 +46,19 @@ public class UsuarioRepositoryTest {
 	}
 
 	@Test
-	public void testBuscarFuncionarioPorEmailECpf() {
+	public void testBuscarUsuarioPorEmailECpf() {
 		Usuario usuario = this.usuarioRepository.findByCpfOrEmail(CPF, EMAIL);
 		assertNotNull(usuario);
 	}
 
 	@Test
-	public void testBuscarFuncionarioPorEmailOuCpfParaEmailInvalido() {
+	public void testBuscarUsuarioPorEmailOuCpfParaEmailInvalido() {
 		Usuario usuario = this.usuarioRepository.findByCpfOrEmail(CPF, "marcel.andrade@hotmail.com");
 		assertNotNull(usuario);
 	}
 
 	@Test
-	public void testBuscarFuncionarioPorEmailECpfParaCpfInvalido() {
+	public void testBuscarUsuarioPorEmailECpfParaCpfInvalido() {
 		Usuario usuario = this.usuarioRepository.findByCpfOrEmail("32014552447", EMAIL);
 		assertNotNull(usuario);
 	}
