@@ -1,4 +1,7 @@
-![alt text](https://github.com/[Marcelphilippeandrade]/[CadastroClienteItauPersonnalite]/[master]/logo_itau_personnalite.png?raw=true)
+<h1 align="center">
+    <img alt="ItauPersonnalite" title="#ItauPersonnalite" src="./logo_itau_personnalite.png" />
+</h1>
+
 
 # API Itaú Cliente Personnalité
 API para cadastro de clientes Itaú Personnalité com Java e Spring Boot. Está API foi desenvolvida utilizando a linguagem Java versão 8 e o framework Spring Boot.
