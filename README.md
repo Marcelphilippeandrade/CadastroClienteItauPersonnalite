@@ -30,8 +30,8 @@ Obs: A senha do banco e a URL de coneção estão no arquivo: <b>application.pro
 
 # Execução do projeto com Docker:
 1. Entrar dentro do diretório do projeto onde está localizado o arquivo <b>Dockerfile (/CadastroClienteItauPersonnalite)</b>
-2. Executar o comando: <b>docker build -t <Nome da imagem a ser criada (sugestão: api_itau)></b>
-3. Executar o comando: <b>docker run -p 8080:8080</b>
+2. Executar o comando: <b>docker build -t <Nome da imagem a ser criada (sugestão: api_itau)> .</b>
+3. Executar o comando: <b>docker run -p 8080:8080 <Nome da imagem a ser criada (sugestão: api_itau)></b>
 <br></br>
 Obs: Após a execução dos passos acima a aplicação já estará sendo executada em um conteiner e você já poderá mandar requisições http através de qualquer
 ferramenta de requisições http <b>(Sugestão: Postman)</b>. E também poderá acessar a documentação da Api por meio do Swagger(http://localhost:8080/swagger-ui.html)
