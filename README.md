@@ -13,6 +13,7 @@ Construir uma API de cadastro de clientes Itaú Personnalité responsável por f
 * Java (Versão 8); 
 * Maven;
 * Mockito;
+* Lombook;
 * JPA;
 * H2 (Banco de dados em memória);
 * Junit;
