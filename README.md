@@ -25,14 +25,16 @@ Construir uma API de cadastro de clientes Itaú Personnalité responsável por f
 1. Executar o comando: <b>mvn spring-boot:run</b>
 2. Para acessar o Swagger contendo todos os Endpoints via interface web: <b>http://localhost:8080/swagger-ui.html</b>
 3. Para acessar o banco de dados H2 (Banco de dados em memória): http://localhost:8080/h2
+<br></br>
 Obs: A senha do banco e a URL de coneção estão no arquivo: <b>application.properties (CadastroClienteItauPersonnalite/src/main/resources)</b>
 
 # Execução do projeto com Docker:
 1. Entrar dentro do diretório do projeto onde está localizado o arquivo <b>Dockerfile (/CadastroClienteItauPersonnalite)</b>
 2. Executar o comando: <b>docker build -t <Nome da imagem a ser criada (sugestão: api_itau)></b>
 3. Executar o comando: <b>docker run -p 8080:8080</b>
-<t>Obs: Após a execução dos passos acima a aplicação já estará sendo executada em um conteiner e você já poderá mandar requisições http através de qualquer
-ferramenta de requisições http <b>(Sugestão: Postman)</b>. E também poderá acessar a documentação da Api por meio do Swagger(http://localhost:8080/swagger-ui.html)</t>
+<br></br>
+Obs: Após a execução dos passos acima a aplicação já estará sendo executada em um conteiner e você já poderá mandar requisições http através de qualquer
+ferramenta de requisições http <b>(Sugestão: Postman)</b>. E também poderá acessar a documentação da Api por meio do Swagger(http://localhost:8080/swagger-ui.html)
 
 # Observação Geral:
 Essa Api foi desenvolvida utilizando um banco de dados em memória (H2).
