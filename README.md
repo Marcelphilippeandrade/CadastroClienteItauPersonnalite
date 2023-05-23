@@ -43,3 +43,5 @@ ferramenta de requisições http <b>(Sugestão: Postman)</b>. E também poderá 
 
 # Observação Geral:
 Essa Api foi desenvolvida utilizando um banco de dados em memória (H2).
+
+:blush: Espero que gostem e bons estudos! :smiley:
