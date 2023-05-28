@@ -42,6 +42,9 @@ Obs: A senha do banco e a URL de coneção estão no arquivo: <b>application.pro
 Obs: Após a execução dos passos acima a aplicação já estará sendo executada em um conteiner e você já poderá mandar requisições http através de qualquer
 ferramenta de requisições http <b>(Sugestão: Postman)</b>. E também poderá acessar a documentação da Api por meio do Swagger(http://localhost:8080/swagger-ui.html)
 
+# Exemplo requisições:
+Os exemplos das requisições estão no arquivo da collection do Postman: API_Itau_Personnalite.postman_collection.json
+
 # Observação Geral:
 Essa Api foi desenvolvida utilizando um banco de dados em memória (H2).
 
