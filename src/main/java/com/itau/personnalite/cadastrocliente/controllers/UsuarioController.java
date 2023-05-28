@@ -23,6 +23,8 @@ import com.itau.personnalite.cadastrocliente.entidades.Usuario;
 import com.itau.personnalite.cadastrocliente.response.Response;
 import com.itau.personnalite.cadastrocliente.services.UsuarioService;
 import com.itau.personnalite.cadastrocliente.utils.DataUtil;
+import com.itau.personnalite.cadastrocliente.validation.ValidadorIdadeMinima;
+import com.itau.personnalite.cadastrocliente.validation.ValidadorNome;
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -205,6 +207,14 @@ public class UsuarioController {
 	 * @param result
 	 */
 	private void validarDadosExistentes(@Valid UsuarioDto cadastroUsuarioDto, BindingResult result) {
+		
+		if (!ValidadorNome.validador(cadastroUsuarioDto)) {
+			result.addError(new ObjectError("usuário", "O nome do usuário não pode conter simbolos. Ex nome válido: José Silva"));
+		}
+		
+		if (!ValidadorIdadeMinima.validador(cadastroUsuarioDto)) {
+			result.addError(new ObjectError("usuário", "A idade mínima para cadastro do usuário é 18 anos."));
+		}
 
 		this.usuarioService.buscarPorCpf(cadastroUsuarioDto.getCpf())
 				.ifPresent(func -> result.addError(new ObjectError("usuário", "CPF já existe.")));

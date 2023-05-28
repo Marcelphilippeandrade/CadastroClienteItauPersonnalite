@@ -40,7 +40,7 @@ public class UsuarioControllerTest {
 
 	private static final String URL_BASE = "/api/usuarios";
 	private static final Long ID = 1L;
-	private static final String NOME = "Marcel";
+	private static final String NOME = "Marcel Philippe";
 	private static final String CPF = "066.189.386-35";
 	private static final String EMAIL = "marcelpaa@hotmail.com";
 	private static final String DATA_NASCIMENTO = "21-08-1988";
@@ -50,6 +50,7 @@ public class UsuarioControllerTest {
 	@WithMockUser
 	public void testCadastroUsuario() throws Exception {
 		Usuario usuario = obterDadosUsuario();
+
 		BDDMockito.given(this.usuarioService.buscarPorId(Mockito.anyLong())).willReturn(Optional.of(new Usuario()));
 		BDDMockito.given(this.usuarioService.persistirUsuario(Mockito.any(Usuario.class))).willReturn(usuario);
 		
