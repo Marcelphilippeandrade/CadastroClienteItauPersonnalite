@@ -1,6 +1,8 @@
 package com.itau.personnalite.cadastrocliente.validation;
 
 import java.lang.reflect.Field;
+
+import com.itau.personnalite.cadastro.annotation.IdadeMinima;
 import com.itau.personnalite.cadastro.annotation.Nome;
 import com.itau.personnalite.cadastrocliente.dtos.UsuarioDto;
 
@@ -12,13 +14,21 @@ public class ValidadorNome {
 		Class<?> classe = objeto.getClass();
 		for (Field field : classe.getDeclaredFields()) {
 			if (field.isAnnotationPresent(Nome.class)) {
+				Nome nomeComRegexValido = field.getAnnotation(Nome.class);
 
-				if (classe.getClass().isInstance(UsuarioDto.class)) {
-					UsuarioDto usuarioDto = (UsuarioDto) objeto;
-
-					if (usuarioDto.getNome().matches(REGEX_NOME)) {
-						return true;
-					}
+//				if (classe.getClass().isInstance(UsuarioDto.class)) {
+//					UsuarioDto usuarioDto = (UsuarioDto) objeto;
+//
+//					if (usuarioDto.getNome().matches(REGEX_NOME)) {
+//						return true;
+//					}
+//				}
+				try {
+					field.setAccessible(true);
+					String nome = (String) field.get(objeto);
+					return nome.matches(nomeComRegexValido.regex());
+				} catch (IllegalAccessException e) {
+					e.printStackTrace();
 				}
 			}
 		}
