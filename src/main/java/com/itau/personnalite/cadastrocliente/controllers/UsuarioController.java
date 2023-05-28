@@ -217,10 +217,6 @@ public class UsuarioController {
 			result.addError(new ObjectError("usuário", "A idade mínima para cadastro do usuário é 18 anos."));
 		}
 		
-		if (!ValidadorEndereco.validador(cadastroUsuarioDto)) {
-			result.addError(new ObjectError("usuário", "O endereço do usuário não pode conter simbolos e nem caracteres espciais"));
-		}
-
 		this.usuarioService.buscarPorCpf(cadastroUsuarioDto.getCpf())
 				.ifPresent(func -> result.addError(new ObjectError("usuário", "CPF já existe.")));
 
