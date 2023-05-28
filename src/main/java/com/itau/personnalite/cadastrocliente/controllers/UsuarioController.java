@@ -23,6 +23,7 @@ import com.itau.personnalite.cadastrocliente.entidades.Usuario;
 import com.itau.personnalite.cadastrocliente.response.Response;
 import com.itau.personnalite.cadastrocliente.services.UsuarioService;
 import com.itau.personnalite.cadastrocliente.utils.DataUtil;
+import com.itau.personnalite.cadastrocliente.validation.ValidadorEndereco;
 import com.itau.personnalite.cadastrocliente.validation.ValidadorIdadeMinima;
 import com.itau.personnalite.cadastrocliente.validation.ValidadorNome;
 
@@ -209,11 +210,15 @@ public class UsuarioController {
 	private void validarDadosExistentes(@Valid UsuarioDto cadastroUsuarioDto, BindingResult result) {
 		
 		if (!ValidadorNome.validador(cadastroUsuarioDto)) {
-			result.addError(new ObjectError("usuário", "O nome do usuário não pode conter simbolos. Ex nome válido: José Silva"));
+			result.addError(new ObjectError("usuário", "O nome do usuário não pode conter simbolos e nem caracteres espciais e deve conter nome e sobre nome. Exemplo de nome válido: José Silva"));
 		}
 		
 		if (!ValidadorIdadeMinima.validador(cadastroUsuarioDto)) {
 			result.addError(new ObjectError("usuário", "A idade mínima para cadastro do usuário é 18 anos."));
+		}
+		
+		if (!ValidadorEndereco.validador(cadastroUsuarioDto)) {
+			result.addError(new ObjectError("usuário", "O endereço do usuário não pode conter simbolos e nem caracteres espciais"));
 		}
 
 		this.usuarioService.buscarPorCpf(cadastroUsuarioDto.getCpf())
