@@ -23,7 +23,6 @@ import com.itau.personnalite.cadastrocliente.entidades.Usuario;
 import com.itau.personnalite.cadastrocliente.response.Response;
 import com.itau.personnalite.cadastrocliente.services.UsuarioService;
 import com.itau.personnalite.cadastrocliente.utils.DataUtil;
-import com.itau.personnalite.cadastrocliente.validation.ValidadorEndereco;
 import com.itau.personnalite.cadastrocliente.validation.ValidadorIdadeMinima;
 import com.itau.personnalite.cadastrocliente.validation.ValidadorNome;
 
