@@ -43,5 +43,6 @@ public class UsuarioDto {
 
 	@NotEmpty(message = "Endereço não pode ser vazio.")
 	@Length(min = 5, max = 400, message = "Endereço deve conter entre 5 e 400 caracteres.")
+	@Endereco(regex = "^[RUA|rua|Rua]+[:]+\\s+(([a-zA-Z])+\\s)+[N]+[:]+\\s+[0-9]+\\s+[BAIRRO|bairro|Bairro]+[:]+\\s+(([a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ])+\\s)+[CEP|cep|Cep]+[:]+\\s+([0-9]{5}+[-]+[0-9]{3})+$")
 	private String endereco;
 }
