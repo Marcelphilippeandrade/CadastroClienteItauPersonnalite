@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Marcel Philippe Abreu Andrade\",\r\n    \"email\": \"marcelpaa@hotmail.com\",\r\n    \"cpf\": \"662.706.060-47\",\r\n    \"dataNascimento\": \"21-08-1988\",\r\n    \"endereco\": \"Rua: Manoel Rubim, Nº: 409, Bairro: São Paulo, Cep: 31910-030\"\r\n}"
+							"raw": "{\r\n    \"nome\": \"Marcel Philippe Abreu Andrade\",\r\n    \"email\": \"marcelpaa@hotmail.com\",\r\n    \"cpf\": \"086.353.750-25\",\r\n    \"dataNascimento\": \"21-08-1988\",\r\n    \"endereco\": \"Rua: Manoel Rubim N: 409 Bairro: São Paulo Cep: 31910-030\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/usuarios/cadastro",
