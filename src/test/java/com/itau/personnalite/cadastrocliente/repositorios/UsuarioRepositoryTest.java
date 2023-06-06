@@ -2,6 +2,9 @@ package com.itau.personnalite.cadastrocliente.repositorios;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,19 +50,19 @@ public class UsuarioRepositoryTest {
 
 	@Test
 	public void testBuscarUsuarioPorEmailECpf() {
-		Usuario usuario = this.usuarioRepository.findByCpfOrEmail(CPF, EMAIL);
+		List<Usuario> usuario = this.usuarioRepository.findByCpfOrEmail(CPF, EMAIL);
 		assertNotNull(usuario);
 	}
 
 	@Test
 	public void testBuscarUsuarioPorEmailOuCpfParaEmailInvalido() {
-		Usuario usuario = this.usuarioRepository.findByCpfOrEmail(CPF, "marcel.andrade@hotmail.com");
+		List<Usuario> usuario = this.usuarioRepository.findByCpfOrEmail(CPF, "marcel.andrade@hotmail.com");
 		assertNotNull(usuario);
 	}
 
 	@Test
 	public void testBuscarUsuarioPorEmailECpfParaCpfInvalido() {
-		Usuario usuario = this.usuarioRepository.findByCpfOrEmail("32014552447", EMAIL);
+		List<Usuario> usuario = this.usuarioRepository.findByCpfOrEmail("32014552447", EMAIL);
 		assertNotNull(usuario);
 	}
 
@@ -69,7 +72,7 @@ public class UsuarioRepositoryTest {
 		usuario.setDataNascimento(new DataUtil().transformarStringEmLocalDate(DATA_NASCIMENTO));
 		usuario.setEmail("marcelpaa@hotmail.com");
 		usuario.setNome("Marcel");
-		usuario.setEndereco("Rua: Manoel Rubim Nº: 409, Bairro: São Paulo, Cep: 31910-030");
+		usuario.setEndereco("Rua: Manoel Rubim Nº: 409 Bairro: São Paulo Cep: 31910-030");
 		return usuario;
 	}
 }

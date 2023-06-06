@@ -44,7 +44,7 @@ public class UsuarioControllerTest {
 	private static final String CPF = "066.189.386-35";
 	private static final String EMAIL = "marcelpaa@hotmail.com";
 	private static final String DATA_NASCIMENTO = "21-08-1988";
-	private static final String ENDERECO = "Rua: Manoel Rubim, Nº: 409, Bairro: São Paulo, Cep: 31910-030";
+	private static final String ENDERECO = "Rua: Manoel Rubim N: 409 Bairro: São Paulo Cep: 31910-030";
 	
 	@Test
 	@WithMockUser
