@@ -50,19 +50,19 @@ public class UsuarioRepositoryTest {
 
 	@Test
 	public void testBuscarUsuarioPorEmailECpf() {
-		List<Usuario> usuario = this.usuarioRepository.findByCpfOrEmail(CPF, EMAIL);
+		Usuario usuario = this.usuarioRepository.findFirstByCpfOrEmail(CPF, EMAIL);
 		assertNotNull(usuario);
 	}
 
 	@Test
 	public void testBuscarUsuarioPorEmailOuCpfParaEmailInvalido() {
-		List<Usuario> usuario = this.usuarioRepository.findByCpfOrEmail(CPF, "marcel.andrade@hotmail.com");
+		Usuario usuario = this.usuarioRepository.findFirstByCpfOrEmail(CPF, "marcel.andrade@hotmail.com");
 		assertNotNull(usuario);
 	}
 
 	@Test
 	public void testBuscarUsuarioPorEmailECpfParaCpfInvalido() {
-		List<Usuario> usuario = this.usuarioRepository.findByCpfOrEmail("32014552447", EMAIL);
+		Usuario usuario = this.usuarioRepository.findFirstByCpfOrEmail("32014552447", EMAIL);
 		assertNotNull(usuario);
 	}
 
