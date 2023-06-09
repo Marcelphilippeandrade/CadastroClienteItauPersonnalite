@@ -1,0 +1,11 @@
+2023-06-09 18:27:31,484 DEBUG - Starting WinSW in console mode
+2023-06-09 18:27:31,541 INFO  - Installing service 'CadastroClienteItauPersonnalite-service (CadastroClienteItauPersonnalite-service)'...
+2023-06-09 18:27:31,618 INFO  - Service 'CadastroClienteItauPersonnalite-service (CadastroClienteItauPersonnalite-service)' was installed successfully.
+2023-06-09 18:29:13,082 DEBUG - Starting WinSW in service mode
+2023-06-09 18:29:13,515 INFO  - Starting java -Xrs -Xmx256m -jar "D:\Marcel\Desenvolvimento Software\Projetos Java\Projetos\CadastroClienteItauPersonnalite\CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.jar"
+2023-06-09 18:29:13,651 INFO  - Started process 29028
+2023-06-09 18:29:13,699 DEBUG - Forwarding logs of the process System.Diagnostics.Process (java) to WinSW.SizeBasedRollingLogAppender
+2023-06-09 18:36:25,415 DEBUG - Starting WinSW in service mode
+2023-06-09 18:36:26,478 INFO  - Starting java -Xrs -Xmx256m -jar "D:\Marcel\Desenvolvimento Software\Projetos Java\Projetos\CadastroClienteItauPersonnalite\CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.jar"
+2023-06-09 18:36:26,620 INFO  - Started process 5700
+2023-06-09 18:36:26,702 DEBUG - Forwarding logs of the process System.Diagnostics.Process (java) to WinSW.SizeBasedRollingLogAppender

@@ -58,7 +58,7 @@ Como já dizia o velho ditato: "Conhecimento nunca é de mais!" :blush:. Resolvi
 2. Abra o arquivo: <b>CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.xml</b>. Alterar os valores: 
 <b>value="D:\Marcel\Desenvolvimento Software\Projetos Java\Projetos\CadastroClienteItauPersonnalite"</b> <b>"D:\Marcel\Desenvolvimento Software\Projetos Java\Projetos\CadastroClienteItauPersonnalite\CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.jar"</b>
 para o caminho onde projeto está salvo na sua máquina.
-3. Execute o prompt de comando como administrador e digitar o seguinte comando: <b>CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.exe install service</b>. Seu novo serviço já aparecerá nos serviços do windows.
+3. Execute o prompt de comando como administrador e digite o seguinte comando: <b>CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.exe install service</b>. O novo serviço: <b>CadastroClienteItauPersonnalite-service</b> já aparecerá nos serviços do windows.
 Agora é só reiniciar o computador para que o seviço seja iniciado!:smiley: e pronto você já poderá mandar requisições via Postman ou através de qualquer
 ferramenta de requisições http.
 <br></br>
