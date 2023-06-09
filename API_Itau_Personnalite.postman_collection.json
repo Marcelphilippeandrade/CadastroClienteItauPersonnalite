@@ -124,7 +124,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/usuarios/cpf/086.353.750-25",
+							"raw": "http://localhost:8080/api/usuarios/cpf/066.189.386-35",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -134,7 +134,7 @@
 								"api",
 								"usuarios",
 								"cpf",
-								"086.353.750-25"
+								"066.189.386-35"
 							]
 						}
 					},
