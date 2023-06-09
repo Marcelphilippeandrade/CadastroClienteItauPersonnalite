@@ -51,3 +51,16 @@ Os exemplos das requisições estão no arquivo da collection do Postman: API_It
 # Observação Geral:
 Essa Api foi desenvolvida utilizando um banco de dados em memória (H2).
 
+# Conhecimento Extra
+Como já dizia o velho ditato: "Conhecimento nunca é de mais!" :blush:. Resolvi instalar a aplicação como serviço no Windows e ficou show de bola! :stuck_out_tongue_winking_eye:
+
+1. Entre no diretório: <b>\CadastroClienteItauPersonnalite</b>
+2. Abra o arquivo: <b>CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.xml</b>. Alterar os valores: 
+<b>value="D:\Marcel\Desenvolvimento Software\Projetos Java\Projetos\CadastroClienteItauPersonnalite"</b> <b>"D:\Marcel\Desenvolvimento Software\Projetos Java\Projetos\CadastroClienteItauPersonnalite\CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.jar"</b>
+para o caminho onde projeto está salvo na sua máquina.
+3. Execute o prompt de comando como administrador e digitar o seguinte comando: <b>CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.exe install service</b>. Seu novo serviço já aparecerá nos serviços do windows.
+Agora é só reiniciar o computador para que o seviço seja iniciado!:smiley: e pronto você já poderá mandar requisições via Postman ou através de qualquer
+ferramenta de requisições http.
+<br></br>
+Obs: Caso você deseje desinstalar o serviço é só executar o prompt de comando como administrador e digitar o seguinte comando: 
+<b>CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.exe uninstall service</b>

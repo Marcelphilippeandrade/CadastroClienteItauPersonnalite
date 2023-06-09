@@ -1,0 +1,9 @@
+<service>
+      <id>CadastroClienteItauPersonnalite-service</id>
+      <name>CadastroClienteItauPersonnalite-service</name>
+      <description>Aplicacao para cadastros dos clientes Itau Personnalite</description>
+      <env name="HOME" value="D:\Marcel\Desenvolvimento Software\Projetos Java\Projetos\CadastroClienteItauPersonnalite"/>
+      <executable>java</executable>
+      <arguments>-Xrs -Xmx256m -jar "D:\Marcel\Desenvolvimento Software\Projetos Java\Projetos\CadastroClienteItauPersonnalite\CadastroClienteItauPersonnalite-0.0.1-SNAPSHOT.jar"</arguments>
+      <logmode>rotate</logmode>
+</service>
