@@ -36,7 +36,7 @@ Construir uma API de cadastro de clientes Itaú Personnalité responsável por f
 Obs: A senha do banco e a URL de coneção estão no arquivo: <b>application.properties (CadastroClienteItauPersonnalite/src/main/resources)</b>
 
 # Execução do projeto com Docker:
-1. Executar o comando: <b>mvn clean install</b> dentro do diretório: <b>\CadastroClienteItauPersonnalite</b>
+1. Executar o comando: <b>mvn clean install</b> dentro do diretório: <b>/CadastroClienteItauPersonnalite</b>
 2. Executar o comando: <b>docker build -t <Nome da imagem a ser criada (sugestão: api_itau) .></b>
 3. Executar o comando: <b>docker run -p 8080:8080 <Nome da imagem a ser criada (sugestão: api_itau)></b>
 4. Para acessar o Swagger contendo todos os Endpoints via interface web: <b>http://localhost:8080/swagger-ui.html</b>
