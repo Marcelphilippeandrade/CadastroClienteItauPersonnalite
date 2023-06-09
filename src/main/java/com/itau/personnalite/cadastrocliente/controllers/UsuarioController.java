@@ -1,6 +1,8 @@
 package com.itau.personnalite.cadastrocliente.controllers;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itau.personnalite.cadastrocliente.dtos.UsuarioDto;
+import com.itau.personnalite.cadastrocliente.entidades.Habilidade;
 import com.itau.personnalite.cadastrocliente.entidades.Usuario;
 import com.itau.personnalite.cadastrocliente.response.Response;
 import com.itau.personnalite.cadastrocliente.services.UsuarioService;
@@ -179,6 +182,18 @@ public class UsuarioController {
 		usuario.setDataNascimento(dataNascimento.transformarStringEmLocalDate(cadastroUsuarioDto.getDataNascimento()));
 		usuario.setEndereco(cadastroUsuarioDto.getEndereco());
 
+		if (cadastroUsuarioDto.getHabilidades() != null && !cadastroUsuarioDto.getHabilidades().isEmpty()) {
+			Habilidade habilidade = new Habilidade();
+			List<Habilidade> habilidades = new ArrayList<>();
+
+			for (Habilidade hab : cadastroUsuarioDto.getHabilidades()) {
+				habilidade.setNome(hab.getNome());
+				habilidade.setUsuario(usuario);
+				habilidades.add(habilidade);
+				usuario.setHabilidades(habilidades);
+			}
+		}
+
 		return usuario;
 	}
 
@@ -208,19 +223,21 @@ public class UsuarioController {
 	 * @param result
 	 */
 	private void validarDadosExistentes(@Valid UsuarioDto cadastroUsuarioDto, BindingResult result) {
-		
+
 		if (!ValidadorNome.validador(cadastroUsuarioDto)) {
-			result.addError(new ObjectError("usuário", "O nome do usuário não pode conter simbolos e nem caracteres especiais e deve conter nome e sobre nome. Exemplo de nome válido: José Silva"));
+			result.addError(new ObjectError("usuário",
+					"O nome do usuário não pode conter simbolos e nem caracteres especiais e deve conter nome e sobre nome. Exemplo de nome válido: José Silva"));
 		}
-		
+
 		if (!ValidadorIdadeMinima.validador(cadastroUsuarioDto)) {
 			result.addError(new ObjectError("usuário", "A idade mínima para cadastro do usuário é 18 anos."));
 		}
-		
+
 		if (!ValidadorEndereco.validador(cadastroUsuarioDto)) {
-			result.addError(new ObjectError("usuário", "O endereço não pode conter caracteres especiais. Exemplo de endereço válido: "));
+			result.addError(new ObjectError("usuário",
+					"O endereço não pode conter caracteres especiais. Exemplo de endereço válido: "));
 		}
-		
+
 		this.usuarioService.buscarPorCpf(cadastroUsuarioDto.getCpf())
 				.ifPresent(func -> result.addError(new ObjectError("usuário", "CPF já existe.")));
 

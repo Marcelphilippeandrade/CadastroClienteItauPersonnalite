@@ -1,5 +1,7 @@
 package com.itau.personnalite.cadastrocliente.dtos;
 
+import java.util.List;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
@@ -9,6 +11,7 @@ import org.hibernate.validator.constraints.br.CPF;
 import com.itau.personnalite.cadastro.annotation.Endereco;
 import com.itau.personnalite.cadastro.annotation.IdadeMinima;
 import com.itau.personnalite.cadastro.annotation.Nome;
+import com.itau.personnalite.cadastrocliente.entidades.Habilidade;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -45,4 +48,6 @@ public class UsuarioDto {
 	@Length(min = 5, max = 400, message = "Endereço deve conter entre 5 e 400 caracteres.")
 	@Endereco(regex = "^[RUA|rua|Rua]+[:]+\\s+(([a-zA-Z])+\\s)+[N]+[:]+\\s+[0-9]+\\s+[BAIRRO|bairro|Bairro]+[:]+\\s+(([a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ])+\\s)+[CEP|cep|Cep]+[:]+\\s+([0-9]{5}+[-]+[0-9]{3})+$")
 	private String endereco;
+	
+	private List<Habilidade> habilidades;
 }
