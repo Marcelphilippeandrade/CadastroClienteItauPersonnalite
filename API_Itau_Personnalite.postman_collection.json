@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Marcel Philippe Abreu Andrade\",\r\n    \"email\": \"marcelpaa@hotmail.com\",\r\n    \"cpf\": \"086.353.750-25\",\r\n    \"dataNascimento\": \"21-08-1988\",\r\n    \"endereco\": \"Rua: Manoel Rubim N: 409 Bairro: São Paulo Cep: 31910-030\"\r\n}"
+							"raw": "{\r\n    \"nome\": \"Marcel Philippe Abreu Andrade\",\r\n    \"email\": \"marcelpaa@hotmail.com\",\r\n    \"cpf\": \"086.353.750-25\",\r\n    \"dataNascimento\": \"21-08-1988\",\r\n    \"endereco\": \"Rua: Manoel Rubim N: 409 Bairro: São Paulo Cep: 31910-030\",\r\n    \"habilidades\": [\r\n        {\r\n            \"nome\": \"Desenvolvedor Java\"\r\n        }\r\n    ]\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/usuarios/cadastro",
@@ -42,9 +42,6 @@
 				},
 				{
 					"name": "Pesquisa Usuário CPF",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -54,12 +51,8 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
-							"raw": "http://localhost:8080/api/usuarios/cpf/662.706.060-47",
+							"raw": "http://localhost:8080/api/usuarios/cpf/086.353.750-25",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -69,7 +62,7 @@
 								"api",
 								"usuarios",
 								"cpf",
-								"662.706.060-47"
+								"086.353.750-25"
 							]
 						}
 					},
@@ -123,7 +116,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Marcel Philippe\",\r\n    \"email\": \"marcelpaa@hotmail.com\",\r\n    \"cpf\": \"662.706.060-47\",\r\n    \"dataNascimento\": \"21-08-1988\",\r\n    \"endereco\": \"Rua: Manoel Rubim, Nº: 409, Bairro: São Paulo, Cep: 31910-030\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"Marcel Philippe Abreu\",\r\n    \"email\": \"marcelpaa@hotmail.com\",\r\n    \"cpf\": \"086.353.750-25\",\r\n    \"dataNascimento\": \"21-08-1988\",\r\n    \"endereco\": \"Rua: Manoel Rubim, Nº: 409, Bairro: São Paulo, Cep: 31910-030\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -131,7 +124,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/usuarios/cpf/662.706.060-47",
+							"raw": "http://localhost:8080/api/usuarios/cpf/086.353.750-25",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -141,7 +134,7 @@
 								"api",
 								"usuarios",
 								"cpf",
-								"662.706.060-47"
+								"086.353.750-25"
 							]
 						}
 					},

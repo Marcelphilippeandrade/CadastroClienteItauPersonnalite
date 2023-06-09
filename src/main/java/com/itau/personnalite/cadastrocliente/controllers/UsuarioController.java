@@ -213,6 +213,10 @@ public class UsuarioController {
 		usuarioDto.setEmail(usuario.getEmail());
 		usuarioDto.setEndereco(usuario.getEndereco());
 
+		if (usuario.getHabilidades() != null && !usuario.getHabilidades().isEmpty()) {
+			usuarioDto.setHabilidades(usuario.getHabilidades());
+		}
+
 		return usuarioDto;
 	}
 
